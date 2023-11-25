@@ -21,6 +21,7 @@ main > div{
     display: flex;
 }
 
+
 main > div > img{
     max-width: inherit;
     max-height: inherit;
@@ -38,7 +39,7 @@ main > div > img{
     background-color: #00000088;
     transition: opacity 0.2s;
     opacity: 100;
-}.slot-fader:hover{
+}.show > .slot-fader{
     opacity: 0;
 }
 
