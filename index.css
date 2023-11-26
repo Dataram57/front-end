@@ -42,19 +42,3 @@ main > div > img{
 }.show > .slot-fader{
     opacity: 0;
 }
-
-.slot-menu{
-    position: absolute;
-    text-decoration: none;
-    font-weight: bold;
-    transition: opacity 0.2s;
-    display: none;
-    opacity: 100;
-}.slot-menu .show{
-    opacity: 0;
-    display: block;
-}
-
-.slot-menu > a{
-    color: aqua;
-}
