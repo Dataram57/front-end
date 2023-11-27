@@ -422,3 +422,62 @@ Other
     overflow-x: hidden;
     overflow-y: hidden;
 }
+
+/*
+================================================
+|                                              |
+|                     Info                     |
+|                                              |
+================================================
+*/
+
+.info{
+    padding: 0.5rem 0.25rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-bottom: 0.2rem solid white;
+    display: flex;
+}
+
+.info-red{
+    background-color: #620000;
+    border-color: #d60000;
+}.info-green{
+    background-color: #006233;
+    border-color: #00e576;
+}.info-blue{
+    background-color: #002e62;
+    border-color: #0064d6;
+}.info-orange{
+    background-color: #624100;
+    border-color: #e59900;
+}.info-light{
+    background-color: #dddddd;
+    border-color: #ffffff;
+    color: #222222;
+}.info-dark{
+    background-color: #212121;
+    border-color: #3a3a3a;
+}
+
+.info-close{
+    display: block;
+    text-align: right;
+    width: 100%;
+    text-decoration: none;
+}.info-close::after{
+    content: '✖️';
+}
+
+/*
+================================================
+|                                              |
+|                     Main                     |
+|                                              |
+================================================
+*/
+
+h1{
+    width: 100%;
+    border-bottom: 0.1rem solid white;
+}
