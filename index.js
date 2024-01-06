@@ -68,14 +68,16 @@ window.onload = () => {
         //read slot
         tag = list[i];
         //correct path
-        tag.path += '/';
-        //check url
-        if(tag.thumb === undefined)
-            tag.thumb = '/thumb.png';
+        tag.path = tag.path.trim();
+        //add index.html to the internal paths
+        if(tag.path.indexOf('./') == 0 || tag.path.indexOf('/') == 0){
+            tag.thumb = tag.path + '/' + tag.thumb;
+            tag.path += '/index.html';
+        }
         //add to list
         tagList.innerHTML += UsePattern(slotPattern, [
-            tag.path + tag.thumb
-            ,tag.path + 'index.html'
+            tag.thumb
+            ,tag.path
         ]);
     }
     //add events
