@@ -6,21 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Front-end Portfolio</title>
         <link rel="stylesheet" href="index.css">
+        <!-- Scripts -->
         <script src="list.js"></script>
         <script src="index.js"></script>
+        <!-- JsRender -->
+        <script src="https://cdn.jsdelivr.net/npm/jsrender"></script>
     </head>
     <body>
-        <nav>
-            
-        </nav>
-        <main>
-            <!--
+        <nav></nav>
+        <main></main>
+        <script type="text/x-jsrender" id="pattern_slot">
             <div>
-                <img src="$ARG$">
-                <a href="$ARG$" class="slot-fader"></a>
+                <img src="{{:thumb}}">
+                <a href="{{:path}}" class="slot-fader"></a>
             </div>
-            -->
-        </main>
+        </script>
         <canvas id="gifCanvas"></canvas>
     </body>
 </html>

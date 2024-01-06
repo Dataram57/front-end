@@ -25,28 +25,11 @@ const onSlotAnimationLoaded = (event) =>{
 
 //#endregion
 
-//===============================================================
-//#region Patterns
+//================================================================
+//#region HTML Templates
 
-const ReadPattern = (element) => {
-    //split by $ARG$
-    const pattern = element.innerHTML.split('$ARG$');
-    //remove element
-    pattern[0] = pattern[0].replace("<!--",'');
-    pattern[pattern.length - 1] = pattern[pattern.length - 1].replace('-->','');
-    return pattern;
-};
-
-const UsePattern = (pattern, args) => {
-    let temp = pattern[0];
-    let i = 0;
-    const f = pattern.length - 1;
-    while(i < f){
-        if(args[i] !== undefined && args[i] !== null)
-            temp += args[i];
-        temp += pattern[++i];
-    }
-    return temp;
+const LoadHTMLTemplate = (id) => {
+    return window.jsrender.templates('#' + id);
 };
 
 //#endregion
@@ -60,7 +43,7 @@ window.onload = () => {
     let i = 0;
     let tag = null;
     //get pattern
-    const slotPattern = ReadPattern(tagList);
+    const slotPattern = LoadHTMLTemplate("pattern_slot");
     //write to list
     tagList.innerHTML = '';
     //test elements
@@ -75,10 +58,10 @@ window.onload = () => {
             tag.path += '/index.html';
         }
         //add to list
-        tagList.innerHTML += UsePattern(slotPattern, [
-            tag.thumb
-            ,tag.path
-        ]);
+        tagList.innerHTML += slotPattern.render({
+            path: tag.path
+            ,thumb: tag.thumb
+        });
     }
     //add events
     i = tagList.children.length;
